@@ -13,14 +13,26 @@ export default {
 </script>
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Montserrat:wght@200;300&family=Playfair+Display:wght@500&family=Roboto:wght@100;300;400&display=swap');
+.wrapper{
+  margin-top: 150px;
+}
+
 body{
   margin: 10px 200px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   background-color: var(--background-color-primary);
+}
+
+a {
+  text-decoration: none;
 }
 
 :root {
@@ -31,7 +43,7 @@ body{
   --element-size: 3.3rem;
 }
 
-p {
+p,h1,h2,h6,h4,h5,h3,a {
   color: var(--text-primary-color);
 }
 

@@ -5,18 +5,24 @@
         <nav>
             <!-- <router-link class="nav-bar-item" to="/">Home</router-link> -->
             <router-link class="nav-bar-item" :to="{name:'home'}">Home</router-link>
-            <router-link class="nav-bar-item" :to="{name:'about'}">About</router-link>
-            <router-link class="nav-bar-item" :to="{name:'about'}">Stack Tech</router-link>
-            <router-link class="nav-bar-item" :to="{name:'about'}">Projects</router-link>
-            <router-link class="nav-bar-item" :to="{name:'about'}">Contact</router-link>
+            <router-link class="nav-bar-item" :to="{name:'stackTech'}">Stack Tech</router-link>
+            <router-link class="nav-bar-item" :to="{name:'projects'}">Projects</router-link>
+            <router-link class="nav-bar-item" :to="{name:'resume'}" target="_blank">Resume</router-link>
+            <router-link class="nav-bar-item" :to="{name:'contact'}">Contact</router-link>
             <!-- <router-link class="nav-bar-item"  to="/techStack">Tech Stack</router-link>
             <router-link class="nav-bar-item"  to="/projects">Project</router-link> -->
             <!-- <router-link class="nav-bar-item"  to="/contact">Contact</router-link> -->
         </nav>
         <nav class="container-nav-bar">
+          <a href="https://github.com/Abdeljabbar-dev" target="_blank">
             <img class="contact__image" src="../../assets/github.png" alt="">
+          </a>
+          <a href="https://www.linkedin.com/in/abdeljabbar-jaddi" target="_blank">
             <img class="contact__image" src="../../assets/linkedin.png" alt="">
+          </a>
+          <a href="https://twitter.com/Abdeljabbar_JAD" target="_blank">
             <img class="contact__image" src="../../assets/twitter.png" alt="">
+          </a>
             <them-button class="contact__image"/>
         </nav>
 

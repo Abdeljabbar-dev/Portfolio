@@ -1,14 +1,14 @@
 <template>
-  <section>
+  <div class="wrapper">
     <article class="article-home">
           <img class="profile_image" src="../../assets/profile.png" alt="">
           <p> Hi 👋,<br>
               My name is
-              ABD-ELJABBAR JADDI <br>
+              <strong class="mayName"> Abdeljabbar JADDI </strong><br>
               I build things for Web and Mobile in a sophisticated way.
           </p>
       </article>
-  </section>
+  </div>
 
 </template>
 
@@ -34,6 +34,12 @@ export default {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
+.mayName{
+  background: linear-gradient(to right, #00C0FD 0%, #E70FAA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .article-home{
   display: grid;
   grid-auto-flow: column;
@@ -44,14 +50,9 @@ export default {
   justify-items: center;
 }
 
-section{
-  margin-top: 150px;
-}
-
 p{
   text-align: left;
-  font-size: xx-large;
-  font-weight: bold;
+  font-size: 30px;
 }
 
 </style>

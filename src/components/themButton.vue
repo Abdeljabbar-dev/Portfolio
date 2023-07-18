@@ -1,7 +1,7 @@
 <template>
     <div>
       <input
-        @change="toggleTheme"
+        @change="methods.toggleTheme"
         id="checkbox"
         type="checkbox"
         class="switch-checkbox"
@@ -11,58 +11,28 @@
         <span>☀️</span>
         <div
           class="switch-toggle"
-          :class="{ 'switch-toggle-checked': userTheme === 'dark-theme' }"
+          :class="{ 'switch-toggle-checked': methods.userTheme.value === 'dark-theme' }"
         ></div>
       </label>
     </div>
   </template>
 
 <script>
+import { onMounted } from 'vue'
+import useMethods from './theme-mixins'
 export default {
-  mounted () {
-    const initUserTheme = this.getTheme() || this.getMediaPreference()
-    this.setTheme(initUserTheme)
-  },
+  setup () {
+    const methods = useMethods()
 
-  data () {
-    return {
-      userTheme: 'light-theme'
-    }
-  },
+    onMounted(() => {
+      const initUserTheme = methods.getTheme() || methods.getMediaPreference()
+      methods.setTheme(initUserTheme)
+    })
 
-  methods: {
-    toggleTheme () {
-      const activeTheme = localStorage.getItem('user-theme')
-      if (activeTheme === 'light-theme') {
-        this.setTheme('dark-theme')
-      } else {
-        this.setTheme('light-theme')
-      }
-      console.log('activeTheme', activeTheme)
-    },
-
-    getTheme () {
-      return localStorage.getItem('user-theme')
-    },
-
-    setTheme (theme) {
-      localStorage.setItem('user-theme', theme)
-      this.userTheme = theme
-      document.documentElement.className = theme
-    },
-
-    getMediaPreference () {
-      const hasDarkPreference = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches
-      if (hasDarkPreference) {
-        return 'dark-theme'
-      } else {
-        return 'light-theme'
-      }
-    }
+    return { methods }
   }
 }
+
 </script>
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
